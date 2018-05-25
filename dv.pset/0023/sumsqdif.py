@@ -1,20 +1,23 @@
+# to calculate sum of squares
 def sqSum():
     i=1
-    while i<=10:
+    a=0
+    while i<=100:
         x=i**2
-        a=0+x
+        a=a+x
         i=i+1
-    print (a)
+    return (a)
 sqSum()
-
+#To calculate square of sums
 def sumSq():
     i=1
-    while i<=10:
+    b=0
+    while i<=100:
         x=i
-        b=0+i
+        b=b+x
+        #i=b**2
+        z=b**2
         i=i+1
-    return b
-    print (b**2)
+    return (z)
 sumSq()
-
-print (a+b)
+print (sumSq()-sqSum())
