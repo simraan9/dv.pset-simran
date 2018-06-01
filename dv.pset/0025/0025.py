@@ -27,11 +27,15 @@ print ('S2: ',S2())
 
 def S3():
     global C
+    o=0
+    D=[]
     for i in range (2,n+1):
         C.append(i)
-        for j in range (len(C)):
-            if C[j]==(i**2):
-                C.pop(C[j])
+    while o<len(C):
+        for j in C:
+            if C[o]==(j**2):
+                C.pop(o)
+        o=o+1
     return (C)
 print ('S3: ',S3())
 
