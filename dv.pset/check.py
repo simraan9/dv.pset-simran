@@ -131,4 +131,4 @@ def wordsTill99999(n):
         5:'five',6:'six',7:'seven',8:'eight',9:'nine'}
         word='ninety '+ unitsOfTen[thousand//1000] +' thousand'+spellingWordsTill999(n%1000)
     return word
-print (spellingWordsUpto9999(n))
+print (wordsTill99999(x))
