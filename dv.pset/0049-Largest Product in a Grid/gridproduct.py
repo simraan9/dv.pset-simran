@@ -1,4 +1,4 @@
-a=[[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8],
+a=[[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8],##
 [49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,4,56,62,0],
 [81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,3,49,13,36,65],
 [52,70,95,23,4,60,11,42,69,24,68,56,1,32,56,71,37,2,36,91],
@@ -34,7 +34,6 @@ def largest_product_grid(no):
                 max=sum
                 index=i
                 index1=j
-                print(index,index1)
                 direction='right'
                 number=no[index][index1]
 
@@ -62,17 +61,6 @@ def largest_product_grid(no):
                 index1=i
                 direction='diagonally right'
 
-    for i in range(16+1):
-        for j in range(16+1-i):
-            sum=1
-            for k in range(4):
-                sum=sum*no[i+k][j+k]
-            if sum>max:
-                max=sum
-                index=j
-                index1=i
-                direction='diagonally right'
-
     for i in range(16+1): #row number
         for j in range(16+1-i): #number on the row
             sum=1
@@ -84,19 +72,19 @@ def largest_product_grid(no):
                 index1=i
                 direction='diagonally right'
 
-    for i in range(20,3,-1):
-        for j in range(20,3+(20-i),-1):
+    for i in range(16+1):
+        for j in range(i,16+1):
             sum=1
             for k in range(4):
-                sum=sum*no[i+k][j+k]
+                sum=sum*no[i-k][j+k]
             if sum>max:
                 max=sum
                 index=j
                 index1=i
                 direction='diagonally left'
 
-    for i in range(20,3,-1): #row number
-        for j in range(20,3+(20-i),-1): #number on the row
+    for i in range(16+1): #row number
+        for j in range(i,16+1): #number on the row
             sum=1
             for k in range(4): #4 numbers
                 sum=sum*no[j+k][i+k]
@@ -109,5 +97,3 @@ def largest_product_grid(no):
     return max,index,index1,direction,number
 
 print(largest_product_grid(a))
-
-#atom://teletype/portal/56a0e11e-1e00-41f1-92fc-68b232457721
